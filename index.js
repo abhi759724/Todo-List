@@ -13,7 +13,7 @@ app.use(express.json());
 const todoRoutes = require("./routes/todos");
 
 // mount the api routes
-app.use("/api/v1", todoRoutes);
+app.use("/create-contact/", todoRoutes);
 
 // Start the server
 app.listen(PORT, () => {
@@ -23,6 +23,6 @@ app.listen(PORT, () => {
 const dbConnect = require("./config/database");
 dbConnect();
 
-app.get("/", (req, res) => {
-  res.send("<h1>This is Homepage</h1>");
-});
+// app.get("/", (req, res) => {
+//   res.render("index");
+// });
