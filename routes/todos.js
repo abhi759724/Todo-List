@@ -4,16 +4,37 @@ const express = require("express");
 const router = express.Router();
 
 // // import controller
-// const { createTodo } = require("../controllers/createToDO");
-// const { deleteTodo } = require("../controllers/deleteTodo");
+const { createTodo } = require("../controllers/createToDO");
+const { deleteTodo } = require("../controllers/deleteTodo");
 
 // // map/add the controller
-// router.post("/createTodo", createTodo);
-// router.delete("/deleteTodo:id", deleteTodo);
+router.post("/createTodo", createTodo);
+router.delete("/deleteTodo:id", deleteTodo);
+
+// render on browser
+
+const todo = require("../models/todo");
+const todoList = [
+  {
+    description: "basketball",
+    dueDate: "12 nov 2023",
+  },
+];
 
 router.get("/", (req, res) => {
-  res.render("./index");
+  todo
+    .find({})
+    .exec()
+    .then((todoList) => {
+      res.render("index", {
+        title: "Todo List",
+        todo_list: todoList,
+      });
+    })
+    .catch((err) => {
+      console.log("Error", err);
+    });
 });
 
 // export the route
-// module.exports = router;
+module.exports = router;

@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        <%=title%>
+        To Do List
     </title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,10 +16,37 @@
     <div class="container">
         <h1 class="text-center">TODO App</h1>
     </div>
-    <div class="container">
-        <form action="/createTodo/todo" method="POST">
-            <input type="text" name="" id="">
+    <div class="container d-flex justify-content-center flex-row">
+
+        <form action="/todo/createTodo/" method="POST">
+            <input type="text" name="description" placeholder="Enter Task" required>
+            <input type="select" name="category" placeholder="Select category">
+            <input type="date" name="dueDate" placeholder="Enter Due Date" required>
+            <button type="submit">Add Task</button>
         </form>
+
+    </div>
+    <div class="container d-flex justify-content-center">
+        <ul id="list">
+            <% for(let i of todo_list){%>
+                <li>
+                    <p>
+                        <%=i.description %>
+                    </p>
+                    <p>
+                        <%=i.category %>
+                    </p>
+                    <p>
+                        <%= i.dueDate %>
+                    </p>
+                    <!-- <p>
+                        <a href="/todo/delete-todo/?id=<%=i._id%>">
+                            <i style="color: black;" class="fas fa-trash"></i>
+                        </a>
+                    </p> -->
+                </li>
+                <%}%>
+        </ul>
     </div>
 
 

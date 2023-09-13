@@ -1,35 +1,21 @@
 // import schema
-
 const todo = require("../models/todo");
 
 // define route handler
 exports.createTodo = async (req, res) => {
-  try {
-    // extract the title and description from req body
-    const { description } = req.body;
-
-    // create the new todo object and insert db in it
-    const response = new todo({ title, description });
-    await response.save();
-    // Create a new Todo document
-    // const newTodo = new todo({ title, description });
-
-    // Save the document to the database
-    // await newTodo.save();
-
-    res.status(200).json({
-      success: true,
-      data: response,
-      message: "Entry Created Successfully",
+  todo
+    .create({
+      description: req.body.description,
+      category: req.body.category,
+      dueDate: req.body.dueDate,
+    })
+    .then((newContacts) => {
+      res.redirect("back");
+    })
+    .catch((err) => {
+      console.error("ERROR:", err);
+      res.status(500).json({
+        message: "Internal Error",
+      });
     });
-
-    // catch and show the error
-  } catch (err) {
-    console.error(err);
-    console.log(err);
-    res.status(500).json({
-      success: false,
-      message: "Internal Server Error",
-    });
-  }
 };

@@ -2,18 +2,22 @@
 const express = require("express");
 const app = express();
 
+// setup view tempelate engine
+app.set("view engine", "ejs");
+app.set("views", "./view");
+
 // load the config
 require("dotenv").config();
 const PORT = process.env.PORT || 4000;
 
 // middleware the parse the json request body
-app.use(express.json());
+app.use(express.urlencoded());
 
 // import all the routes
 const todoRoutes = require("./routes/todos");
 
 // mount the api routes
-app.use("/create-contact/", todoRoutes);
+app.use("/todo/", todoRoutes);
 
 // Start the server
 app.listen(PORT, () => {
@@ -22,7 +26,3 @@ app.listen(PORT, () => {
 
 const dbConnect = require("./config/database");
 dbConnect();
-
-// app.get("/", (req, res) => {
-//   res.render("index");
-// });

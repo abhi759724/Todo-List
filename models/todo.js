@@ -4,10 +4,14 @@ const todoSchema = new mongoose.Schema({
   description: {
     type: String,
     required: true,
-    maxLength: 100,
+    maxLength: 200,
+  },
+  category: {
+    type: String,
+    required: true,
   },
   dueDate: {
-    type: Date,
+    type: String,
     required: true,
   },
 });
