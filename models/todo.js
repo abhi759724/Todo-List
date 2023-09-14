@@ -1,5 +1,7 @@
+// require mongoose instance
 const mongoose = require("mongoose");
 
+// create Schema
 const todoSchema = new mongoose.Schema({
   description: {
     type: String,
@@ -16,4 +18,5 @@ const todoSchema = new mongoose.Schema({
   },
 });
 
+// export
 module.exports = mongoose.model("todo", todoSchema);

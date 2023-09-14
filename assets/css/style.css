@@ -32,9 +32,7 @@ body {
   background-color: rgb(12, 12, 243);
   color: white;
 }
-.tasks {
-  /* border: 1px solid black; */
-}
+
 li {
   list-style: none;
 }

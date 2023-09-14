@@ -1,5 +1,8 @@
+// create the mongoose instance
 const mongoose = require("mongoose");
 require("dotenv").config();
+
+// DB connection
 
 const dbConnect = () => {
   mongoose
@@ -16,5 +19,6 @@ const dbConnect = () => {
       process.exit(1);
     });
 };
-// module.exports = db;
+
+// exports the db connection;
 module.exports = dbConnect;

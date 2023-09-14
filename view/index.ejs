@@ -20,6 +20,8 @@
     </div>
     <div class="container inputContainer">
 
+        <!-- // form ceated to take Inputs -->
+
         <form action="/todo/createTodo/" method="POST">
             <div class="container-fluid d-block inputTask m-0 p-0">
                 <p>DESCRIPTION</p>
@@ -47,69 +49,9 @@
 
 
     </div>
-    <!-- <div class="container m-auto displayList">
-        <div class="row">
-            <div class="col-5">
-                <div class="row m-0 p-0">
-                    <p>
-                    <ul id="list" class="m-0 p-0">
-                        <% for(let i of todo_list){%>
-                            <li>
-                                <p class="m-0 p-0">
-                                    <span><i class="fas fa-tasks"></i></span>
-                                    <%=i.description %>
-                                </p>
-                            </li>
-                            <%}%>
-                    </ul>
-                    </p>
-                </div>
-                <div class="row m-0 p-0">
-                    <p>
-                    <ul id="list" class="m-0 p-0">
-                        <% for(let i of todo_list){%>
-                            <li>
 
-                                <p class="m-0 p-0">
-                                    <span><i class="fas fa-calendar"></i></span>
-                                    <%= i.dueDate %>
-                                </p>
+    <!-- code to show the list taken by user -->
 
-                            </li>
-                            <%}%>
-                    </ul>
-                    </p>
-                </div>
-            </div>
-            <div class="col-4 d-flex justify-content-center border-1">
-                <ul id="list" class="m-0 p-0">
-                    <% for(let i of todo_list){%>
-                        <li>
-                            <p class="m-0 p-0">
-                                <a href="/todo/deleteTodo/?id=<%=i._id%>"><i
-                                        class="mt-5 fas fa-trash text-danger"></i></a>
-                            </p>
-                        </li>
-                        <%}%>
-                </ul>
-            </div>
-            <div class="col-3 d-flex justify-content-center align-items-center">
-                <ul id="list" class="m-0 p-0">
-                    <% for(let i of todo_list){%>
-                        <li>
-                            <button class="bg-primary categ text-white p-0 m-0">
-                                <%=i.category %>
-                            </button>
-                        </li>
-                        <%}%>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-
-
-
-    <!-- <ul id="list" class="d-inline"> -->
     <div class="container">
         <div class="row tasks">
             <% for(let i of todo_list){%>

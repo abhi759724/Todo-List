@@ -1,7 +1,7 @@
 // import schema
 const todo = require("../models/todo");
 
-// define route handler
+// define route handler to create the todo task
 exports.createTodo = async (req, res) => {
   todo
     .create({
