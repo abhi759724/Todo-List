@@ -13,6 +13,9 @@ const PORT = process.env.PORT || 4000;
 // middleware the parse the json request body
 app.use(express.urlencoded());
 
+// require assest
+app.use(express.static("assets"));
+
 // import all the routes
 const todoRoutes = require("./routes/todos");
 

@@ -9,17 +9,12 @@ const { deleteTodo } = require("../controllers/deleteTodo");
 
 // // map/add the controller
 router.post("/createTodo", createTodo);
-router.delete("/deleteTodo:id", deleteTodo);
+router.get("/deleteTodo", deleteTodo);
 
 // render on browser
 
 const todo = require("../models/todo");
-const todoList = [
-  {
-    description: "basketball",
-    dueDate: "12 nov 2023",
-  },
-];
+const todoList = [{}];
 
 router.get("/", (req, res) => {
   todo

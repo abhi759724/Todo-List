@@ -1,0 +1,43 @@
+body {
+  background-color: whitesmoke;
+  font-family: "Times New Roman", Times, serif;
+}
+.inputContainer p {
+  font-size: 15px;
+  font-weight: 700;
+}
+.enter-task,
+.category {
+  border: none;
+  width: 60rem;
+  line-height: 2rem;
+  outline: none;
+}
+.date {
+  border: none;
+  line-height: 2rem;
+  outline: none;
+}
+#addTodo {
+  width: 120px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 2rem;
+}
+.categ {
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  margin-bottom: 2rem;
+  background-color: rgb(12, 12, 243);
+  color: white;
+}
+.tasks {
+  /* border: 1px solid black; */
+}
+li {
+  list-style: none;
+}
+.displayList {
+  font-size: 20px;
+}
